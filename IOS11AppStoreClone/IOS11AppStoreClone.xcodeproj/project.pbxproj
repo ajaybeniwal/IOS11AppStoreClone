@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B08BB161FA1A706008BFFCF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B08BB151FA1A706008BFFCF /* TodayViewController.swift */; };
+		0B08BB181FA1A719008BFFCF /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B08BB171FA1A719008BFFCF /* UpdateViewController.swift */; };
 		0B6EF96A1EF93173005B0769 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EF9681EF93173005B0769 /* LaunchScreen.storyboard */; };
 		0B6EF9911EF93318005B0769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EF9901EF93318005B0769 /* Assets.xcassets */; };
 		0BC73E201FA1A11900A6358F /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC73E161FA1A11600A6358F /* AppDetailViewController.swift */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		09BC40DCB20B4CC7C37E7D33 /* Pods_IOS11AppStoreClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS11AppStoreClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B08BB151FA1A706008BFFCF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		0B08BB171FA1A719008BFFCF /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		0B6EF95C1EF93173005B0769 /* IOS11AppStoreClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS11AppStoreClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6EF9691EF93173005B0769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B6EF96B1EF93173005B0769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				0B6EF9681EF93173005B0769 /* LaunchScreen.storyboard */,
 				0B6EF96B1EF93173005B0769 /* Info.plist */,
 				0B6EF97B1EF932E6005B0769 /* IOS11AppStoreClone-Bridging-Header.h */,
+				0B08BB151FA1A706008BFFCF /* TodayViewController.swift */,
+				0B08BB171FA1A719008BFFCF /* UpdateViewController.swift */,
 			);
 			path = IOS11AppStoreClone;
 			sourceTree = "<group>";
@@ -251,6 +257,8 @@
 				0BC73E271FA1A11900A6358F /* AppDelegate.swift in Sources */,
 				0BC73E251FA1A11900A6358F /* ViewController.swift in Sources */,
 				0BC73E261FA1A11900A6358F /* GamesHorizontalSectionController.swift in Sources */,
+				0B08BB161FA1A706008BFFCF /* TodayViewController.swift in Sources */,
+				0B08BB181FA1A719008BFFCF /* UpdateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

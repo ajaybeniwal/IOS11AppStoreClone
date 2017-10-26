@@ -12,10 +12,12 @@ class TabViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let v3 = addChildVC(childVc: GamesViewController(), title: "Games", iconImage: "Games")
-        let v1 = addChildVC(childVc: AppsViewController(), title: "Apps", iconImage: "App")
-        let v2 = addChildVC(childVc: SearchViewController(), title: "Search", iconImage: "Search")
-        self.viewControllers = [v3,v1,v2]
+        let v1 = addChildVC(childVc: TodayViewController(), title: "Today", iconImage: "Today")
+        let v2 = addChildVC(childVc: GamesViewController(), title: "Games", iconImage: "Games")
+        let v3 = addChildVC(childVc: AppsViewController(), title: "Apps", iconImage: "App")
+        let v4 = addChildVC(childVc: UpdateViewController(), title: "Updates", iconImage: "Update")
+        let v5 = addChildVC(childVc: SearchViewController(), title: "Search", iconImage: "Search")
+        self.viewControllers = [v1,v2,v3,v4,v5]
     }
 
     override func didReceiveMemoryWarning() {

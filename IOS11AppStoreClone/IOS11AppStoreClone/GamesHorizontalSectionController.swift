@@ -12,6 +12,10 @@ import IGListKit
 class GamesHorizontalSectionController: ListSectionController, ListAdapterDataSource {
 
     private var number: Int?
+    override init() {
+        super.init()
+        self.inset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
+    }
     
     lazy var adapter: ListAdapter = {
         let adapter = ListAdapter(updater: ListAdapterUpdater(),

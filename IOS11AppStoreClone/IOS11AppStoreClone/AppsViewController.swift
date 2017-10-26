@@ -22,8 +22,6 @@ class AppsViewController: UIViewController,UICollectionViewDataSource,UICollecti
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(collectionView)
         collectionView.register(NumberCell.self, forCellWithReuseIdentifier: "defaultCellId")
-         /* Disable untill I found some solution for horizontal scrolling header bars*/
-        /*collectionView.register(SectionHeaderCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header")*/
         collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self;
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout;
@@ -56,28 +54,10 @@ class AppsViewController: UIViewController,UICollectionViewDataSource,UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.frame.size.width-30, height: 80)
     }
-    
-    /*
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionElementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as! SectionHeaderCell
-            return headerView
-        default:
-            assert(false, "Unexpected element kind")
-        }
-    }*/
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailController = AppDetailViewController();
         self.navigationController?.pushViewController(detailController, animated: true)
     }
-     /* Disable untill I found some solution for horizontal scrolling header bars*/
-   /* func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: self.view.frame.size.width, height: 50)
-    }*/
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

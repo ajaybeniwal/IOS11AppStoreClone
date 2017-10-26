@@ -17,14 +17,9 @@ class GamesViewController: UIViewController,ListAdapterDataSource {
      let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     let data: [Any] = [
         1,
-        
         3,
-        
         4,
-        
         5,
-        
-        
         ]
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         return data as! [ListDiffable]
