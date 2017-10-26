@@ -113,7 +113,7 @@ final class GameImageCell: UICollectionViewCell {
         productTypeLabel.textColor = UIColor(red: 0/255, green: 149/255, blue: 255/255, alpha: 1)
         productTypeLabel.text = "NEW GAME"
         productTypeLabel.numberOfLines = 0;
-        productTypeLabel.setContentHuggingPriority(UILayoutPriorityRequired, for:.vertical)
+        productTypeLabel.setContentHuggingPriority(UILayoutPriority.required, for:.vertical)
         return productTypeLabel
         
     }()
@@ -124,7 +124,7 @@ final class GameImageCell: UICollectionViewCell {
         var productTypeLabel = UILabel()
         productTypeLabel.font = UIFont.systemFont(ofSize: 20)
         productTypeLabel.textColor = UIColor.black
-         productTypeLabel.setContentHuggingPriority(UILayoutPriorityRequired, for:.vertical)
+         productTypeLabel.setContentHuggingPriority(UILayoutPriority.required, for:.vertical)
         productTypeLabel.text = "Injustice 2"
         return productTypeLabel
     }()
@@ -134,7 +134,7 @@ final class GameImageCell: UICollectionViewCell {
         productTypeLabel.font = UIFont.systemFont(ofSize: 20)
         productTypeLabel.textColor = UIColor.lightGray
         productTypeLabel.text = "When iconic superheroes collide"
-         productTypeLabel.setContentHuggingPriority(UILayoutPriorityRequired, for:.vertical)
+         productTypeLabel.setContentHuggingPriority(UILayoutPriority.required, for:.vertical)
         return productTypeLabel
     }()
     var imageView:UIImageView = {

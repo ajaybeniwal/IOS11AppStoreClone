@@ -66,7 +66,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchControl
         let uiView = UIView()
         let headerLabel = UILabel()
         headerLabel.text = "Trending"
-        headerLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightBold)
+        headerLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.bold)
         uiView.addSubview(headerLabel)
         headerLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(uiView).offset(15)
@@ -90,7 +90,7 @@ class SearchViewController: UIViewController,UISearchBarDelegate,UISearchControl
 class SearchTableCell :UITableViewCell{
     var numberTypeLabel:UILabel = {
         var productTypeLabel = UILabel()
-        productTypeLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightSemibold)
+        productTypeLabel.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.semibold)
         productTypeLabel.textColor = UIColor(red: 0/255, green: 149/255, blue: 255/255, alpha: 1)
         productTypeLabel.text = "Cricket Live Tv"
         productTypeLabel.numberOfLines = 0;

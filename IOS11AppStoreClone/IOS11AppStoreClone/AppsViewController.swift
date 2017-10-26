@@ -88,7 +88,7 @@ class AppsViewController: UIViewController,UICollectionViewDataSource,UICollecti
 class SectionHeaderCell:UICollectionReusableView{
     var numberTypeLabel:UILabel = {
         var productTypeLabel = UILabel()
-        productTypeLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFontWeightBold)
+        productTypeLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)
         productTypeLabel.textColor = UIColor.black
         productTypeLabel.text = "Apps we love"
         productTypeLabel.numberOfLines = 0;
@@ -128,7 +128,7 @@ class NumberCell:UICollectionViewCell{
     var getAppButton:UIButton =  {
         var submitButton = UIButton()
         submitButton.setTitle("GET", for: UIControlState.normal)
-        submitButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightBold)
+        submitButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
         submitButton.setTitleColor(UIColor(red: 0/255, green: 149/255, blue: 255/255, alpha: 1), for: UIControlState.normal)
         submitButton.layer.cornerRadius = 12
         submitButton.layer.masksToBounds = true

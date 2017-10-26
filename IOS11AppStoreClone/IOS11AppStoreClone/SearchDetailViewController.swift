@@ -137,7 +137,7 @@ var numberTypeLabel:UILabel = {
 var getAppButton:UIButton =  {
     var submitButton = UIButton()
     submitButton.setTitle("GET", for: UIControlState.normal)
-    submitButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightBold)
+    submitButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
     submitButton.setTitleColor(UIColor(red: 0/255, green: 149/255, blue: 255/255, alpha: 1), for: UIControlState.normal)
     submitButton.layer.cornerRadius = 12
     submitButton.layer.masksToBounds = true
