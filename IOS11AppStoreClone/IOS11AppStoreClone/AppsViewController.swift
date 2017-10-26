@@ -28,6 +28,7 @@ class AppsViewController: UIViewController,UICollectionViewDataSource,UICollecti
         flowLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 4
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left:10, bottom: 0, right:0)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.delegate = self;
         collectionView.snp.makeConstraints { (make) in
