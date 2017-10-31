@@ -7,5 +7,5 @@
 6. Project demonstrates use of Autolayout , CollectionView , Tableview using code and few screens are built without any third part support like Upate Tab.
 ![App Store Image](https://raw.githubusercontent.com/ajaybeniwal/IOS11AppStoreClone/master/IMG_1150.PNG)
 ![App Store Image](https://github.com/ajaybeniwal/IOS11AppStoreClone/blob/master/IMG_1149.PNG)
-![App Store Image](https://github.com/ajaybeniwal/IOS11AppStoreClone/blob/master/Update.JPG)
-![App Store Image](https://github.com/ajaybeniwal/IOS11AppStoreClone/blob/master/Today.PNG)
+![App Store Image](https://github.com/ajaybeniwal/IOS11AppStoreClone/blob/master/Update.png)
+![App Store Image](https://github.com/ajaybeniwal/IOS11AppStoreClone/blob/master/Today.png)
