@@ -68,13 +68,14 @@ class TodayViewController: UIViewController,UICollectionViewDataSource,UICollect
     
 }
 
-class ImageViewCardCell:UICollectionViewCell{
- 
+class ImageViewCardCell:UICollectionViewCell,UIGestureRecognizerDelegate{
+    private var tap: UITapGestureRecognizer!
     let cardView:UIView = {
        let cardView = UIView()
         cardView.backgroundColor = UIColor.white
         cardView.layer.cornerRadius = 10
         cardView.layer.masksToBounds = true
+        cardView.isUserInteractionEnabled = true
         return cardView
     }()
     
@@ -125,6 +126,10 @@ class ImageViewCardCell:UICollectionViewCell{
     
     func setupSubViews() ->Void{
         self.contentView.addSubview(cardView)
+        tap = UITapGestureRecognizer(target: self, action: #selector(self.cardTapped))
+        cardView.addGestureRecognizer(tap)
+        tap.delegate = self
+        tap.cancelsTouchesInView = false
         cardView.snp.makeConstraints { (make) in
             make.leading.trailing.equalTo(self.contentView)
             make.top.equalTo(self.contentView).offset(20)
@@ -158,6 +163,22 @@ class ImageViewCardCell:UICollectionViewCell{
             make.top.equalTo(cardView).offset(100)
         }
         
+    }
+    
+     @objc  func cardTapped(){
+        print("Tap Click")
+    }
+    
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        UIView.animate(withDuration: 0.2) {
+            self.cardView.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        }
+    }
+    
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        UIView.animate(withDuration: 0.2) {
+            self.cardView.transform = CGAffineTransform.identity
+        }
     }
     
     func configure(index:Int){
