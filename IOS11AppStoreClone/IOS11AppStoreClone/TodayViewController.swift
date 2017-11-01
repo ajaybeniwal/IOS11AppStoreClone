@@ -54,6 +54,9 @@ class TodayViewController: UIViewController,UICollectionViewDataSource,UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageViewCard", for: indexPath) as! ImageViewCardCell
         cell.configure(index: indexPath.row)
+        cell.onCardTap = {()->Void in
+            print("Card was really tapped")
+        }
         return cell;
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -70,6 +73,7 @@ class TodayViewController: UIViewController,UICollectionViewDataSource,UICollect
 
 class ImageViewCardCell:UICollectionViewCell,UIGestureRecognizerDelegate{
     private var tap: UITapGestureRecognizer!
+    var onCardTap:(()->Void)?
     let cardView:UIView = {
        let cardView = UIView()
         cardView.backgroundColor = UIColor.white
@@ -166,7 +170,7 @@ class ImageViewCardCell:UICollectionViewCell,UIGestureRecognizerDelegate{
     }
     
      @objc  func cardTapped(){
-        print("Tap Click")
+        self.onCardTap?()
     }
     
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
