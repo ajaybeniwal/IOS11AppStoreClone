@@ -54,8 +54,9 @@ class TodayViewController: UIViewController,UICollectionViewDataSource,UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageViewCard", for: indexPath) as! ImageViewCardCell
         cell.configure(index: indexPath.row)
-        cell.onCardTap = {()->Void in
-            print("Card was really tapped")
+        //Using weak because otherwise will cause reference cycle
+        cell.onCardTap = {[weak self]()->Void in
+            self?.navigationController?.pushViewController(TodayDetailViewController(), animated: true)
         }
         return cell;
     }
