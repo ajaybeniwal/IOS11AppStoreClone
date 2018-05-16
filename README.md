@@ -6,6 +6,8 @@
 5. This project does not teach best practice but its for beginners to create complex layout using code instead of using storyboards.
 6. Project demonstrates use of Autolayout , CollectionView , Tableview using code and few screens are built without any third part support in few screens like Upate Tab so that beginners can understand
 7. Today view controller has custom presentation instead of present view controller , it is for beginners to learn how to create custom transition animation that is why I avoided using any library to that beginners can learn how to do custom transition animations
+
+
 ![App Store Image](https://raw.githubusercontent.com/ajaybeniwal/IOS11AppStoreClone/master/IMG_1150.PNG)
 ![App Store Image](https://github.com/ajaybeniwal/IOS11AppStoreClone/blob/master/IMG_1149.PNG)
 ![App Store Image](https://github.com/ajaybeniwal/IOS11AppStoreClone/blob/master/Update.png)
