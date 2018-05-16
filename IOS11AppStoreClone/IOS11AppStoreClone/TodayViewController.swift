@@ -9,7 +9,7 @@
 import UIKit
 
 class TodayViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-    
+    let modelTransition = ModelTransitionAnimator()
     
     var collectionView:UICollectionView = {let collectionView = UICollectionView(frame:CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
         return collectionView;
@@ -57,9 +57,7 @@ class TodayViewController: UIViewController,UICollectionViewDataSource,UICollect
         //Using weak because otherwise will cause reference cycle
         cell.onCardTap = {[weak self]()->Void in
           //  self?.present(TodayDetailViewController(), animated: true, completion: nil)
-        let today = TodayDetailViewController()
-            today.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
-        self?.navigationController?.present(today, animated: true, completion: nil);
+        
             
             //self?.navigationController?.pushViewController(TodayDetailViewController(), animated: true)
         }
@@ -69,6 +67,18 @@ class TodayViewController: UIViewController,UICollectionViewDataSource,UICollect
         return CGSize(width: self.view.frame.size.width-40, height: 400)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let today = TodayDetailViewController()
+        today.transitioningDelegate = self
+        today.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
+        guard let cell = collectionView.cellForItem(at: indexPath) else {
+            return;
+        }
+        let cellFrame = collectionView.convert(cell.frame, to: collectionView.superview)
+        modelTransition.originFrame = cellFrame;
+        present(today, animated: true, completion: nil);
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -77,7 +87,18 @@ class TodayViewController: UIViewController,UICollectionViewDataSource,UICollect
     
 }
 
-class ImageViewCardCell:UICollectionViewCell,UIGestureRecognizerDelegate{
+extension TodayViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        modelTransition.presenting = true
+        return modelTransition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil;
+    }
+}
+
+class ImageViewCardCell:UICollectionViewCell{//UIGestureRecognizerDelegate{
     private var tap: UITapGestureRecognizer!
     var onCardTap:(()->Void)?
     let cardView:UIView = {
@@ -136,10 +157,10 @@ class ImageViewCardCell:UICollectionViewCell,UIGestureRecognizerDelegate{
     
     func setupSubViews() ->Void{
         self.contentView.addSubview(cardView)
-        tap = UITapGestureRecognizer(target: self, action: #selector(self.cardTapped))
-        cardView.addGestureRecognizer(tap)
-        tap.delegate = self
-        tap.cancelsTouchesInView = false
+    //    tap = UITapGestureRecognizer(target: self, action: #selector(self.cardTapped))
+    //    cardView.addGestureRecognizer(tap)
+        //tap.delegate = self
+      //  tap.cancelsTouchesInView = false
         cardView.snp.makeConstraints { (make) in
             make.leading.trailing.equalTo(self.contentView)
             make.top.equalTo(self.contentView).offset(20)
@@ -179,7 +200,7 @@ class ImageViewCardCell:UICollectionViewCell,UIGestureRecognizerDelegate{
         self.onCardTap?()
     }
     
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+  /*  override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         UIView.animate(withDuration: 0.2) {
             self.cardView.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }
@@ -189,7 +210,7 @@ class ImageViewCardCell:UICollectionViewCell,UIGestureRecognizerDelegate{
         UIView.animate(withDuration: 0.2) {
             self.cardView.transform = CGAffineTransform.identity
         }
-    }
+    }*/
     
     func configure(index:Int){
         if(index>0){

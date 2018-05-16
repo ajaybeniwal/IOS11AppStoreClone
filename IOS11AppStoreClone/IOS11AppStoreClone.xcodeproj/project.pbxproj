@@ -10,6 +10,7 @@
 		0B08BB161FA1A706008BFFCF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B08BB151FA1A706008BFFCF /* TodayViewController.swift */; };
 		0B08BB181FA1A719008BFFCF /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B08BB171FA1A719008BFFCF /* UpdateViewController.swift */; };
 		0B4B6B461FAB42540024D699 /* TodayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4B6B451FAB42540024D699 /* TodayDetailViewController.swift */; };
+		0B5F79F520ABD7CB00831977 /* ModelTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5F79F420ABD7CB00831977 /* ModelTransitionAnimator.swift */; };
 		0B6EF96A1EF93173005B0769 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EF9681EF93173005B0769 /* LaunchScreen.storyboard */; };
 		0B6EF9911EF93318005B0769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EF9901EF93318005B0769 /* Assets.xcassets */; };
 		0BC73E201FA1A11900A6358F /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC73E161FA1A11600A6358F /* AppDetailViewController.swift */; };
@@ -30,6 +31,7 @@
 		0B08BB151FA1A706008BFFCF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		0B08BB171FA1A719008BFFCF /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		0B4B6B451FAB42540024D699 /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
+		0B5F79F420ABD7CB00831977 /* ModelTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTransitionAnimator.swift; sourceTree = "<group>"; };
 		0B6EF95C1EF93173005B0769 /* IOS11AppStoreClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS11AppStoreClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6EF9691EF93173005B0769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B6EF96B1EF93173005B0769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				0B08BB151FA1A706008BFFCF /* TodayViewController.swift */,
 				0B08BB171FA1A719008BFFCF /* UpdateViewController.swift */,
 				0B4B6B451FAB42540024D699 /* TodayDetailViewController.swift */,
+				0B5F79F420ABD7CB00831977 /* ModelTransitionAnimator.swift */,
 			);
 			path = IOS11AppStoreClone;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				0BC73E241FA1A11900A6358F /* BaseNavController.swift in Sources */,
 				0BC73E281FA1A11900A6358F /* SearchDetailViewController.swift in Sources */,
 				0BC73E221FA1A11900A6358F /* AppsViewController.swift in Sources */,
+				0B5F79F520ABD7CB00831977 /* ModelTransitionAnimator.swift in Sources */,
 				0BC73E211FA1A11900A6358F /* GamesViewController.swift in Sources */,
 				0BC73E291FA1A11900A6358F /* TabViewController.swift in Sources */,
 				0BC73E231FA1A11900A6358F /* SearchViewController.swift in Sources */,
