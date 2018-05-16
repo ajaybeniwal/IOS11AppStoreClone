@@ -56,7 +56,12 @@ class TodayViewController: UIViewController,UICollectionViewDataSource,UICollect
         cell.configure(index: indexPath.row)
         //Using weak because otherwise will cause reference cycle
         cell.onCardTap = {[weak self]()->Void in
-            self?.navigationController?.pushViewController(TodayDetailViewController(), animated: true)
+          //  self?.present(TodayDetailViewController(), animated: true, completion: nil)
+        let today = TodayDetailViewController()
+            today.modalPresentationStyle = UIModalPresentationStyle.fullScreen;
+        self?.navigationController?.present(today, animated: true, completion: nil);
+            
+            //self?.navigationController?.pushViewController(TodayDetailViewController(), animated: true)
         }
         return cell;
     }
