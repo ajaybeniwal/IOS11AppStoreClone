@@ -26,14 +26,28 @@ class ModelTransitionAnimator:NSObject,UIViewControllerAnimatedTransitioning{
         toView.frame = CGRect(x: 0, y: toView.frame.height, width: toView.frame.width, height: 0)
         //  toView.alpha = 0
         toView.layoutIfNeeded()
-        UIView.animate(withDuration: duration, delay:0.0,
+      /* UIView.animate(withDuration: duration, delay:0.0,
                        usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0,
                        animations: {
                         toView.frame = fromView.frame
         }, completion: { _ in
             transitionContext.completeTransition(true)
-        })
+        })*/
         
+        let animator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.8)
+        animator.addAnimations {
+            toView.frame = fromView.frame
+        }
+        animator.addCompletion { position in
+            switch position {
+            case .end:
+                transitionContext.completeTransition(true)
+            default:
+                transitionContext.completeTransition(true)
+            }
+        }
+        
+        animator.startAnimation()
         
     }
     
