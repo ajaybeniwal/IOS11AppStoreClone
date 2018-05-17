@@ -9,6 +9,7 @@
 import UIKit
 
 class TodayDetailViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
     let tableView:UITableView = {
         let _tableView = UITableView(frame: CGRect.zero)
         _tableView.estimatedRowHeight = 400
@@ -16,6 +17,7 @@ class TodayDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         return _tableView
     }()
     override func viewDidLoad() {
+        self.view.superview?.backgroundColor = UIColor.red
         super.viewDidLoad()
         self.navigationItem.largeTitleDisplayMode = .never
         self.view.backgroundColor = UIColor.white

@@ -56,10 +56,7 @@ class TodayViewController: UIViewController,UICollectionViewDataSource,UICollect
         cell.configure(index: indexPath.row)
         //Using weak because otherwise will cause reference cycle
         cell.onCardTap = {[weak self]()->Void in
-          //  self?.present(TodayDetailViewController(), animated: true, completion: nil)
-        
-            
-            //self?.navigationController?.pushViewController(TodayDetailViewController(), animated: true)
+         
         }
         return cell;
     }
@@ -94,7 +91,8 @@ extension TodayViewController: UIViewControllerTransitioningDelegate {
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return nil;
+        modelTransition.presenting = false
+        return modelTransition
     }
 }
 

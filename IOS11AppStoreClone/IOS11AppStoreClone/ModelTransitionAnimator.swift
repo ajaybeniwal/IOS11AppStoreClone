@@ -18,55 +18,30 @@ class ModelTransitionAnimator:NSObject,UIViewControllerAnimatedTransitioning{
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        let fromViewController = transitionContext.viewController(forKey: .from)
-        let toViewController = transitionContext.viewController(forKey: .to)
         let containerView = transitionContext.containerView
         guard let fromView = transitionContext.view(forKey: UITransitionContextViewKey.from) else { return }
         guard let toView = transitionContext.view(forKey: UITransitionContextViewKey.to) else { return }
-        let containerFrame = containerView.frame
-        var toViewStartFrame = transitionContext.initialFrame(for: toViewController!)
-        let toViewEndFrame = transitionContext.finalFrame(for: toViewController!)
-        toViewStartFrame.origin.x = originFrame.origin.x
-        toViewStartFrame.origin.y = originFrame.origin.y
-        
+        toView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(toView)
-        toView.frame = toViewStartFrame
-       UIView.animate(withDuration: 0.9, delay:0.0,
-                       usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0,
-                       animations: {
-                        toView.frame = toViewEndFrame
-        }, completion: { _ in
-            transitionContext.completeTransition(true)
-        })
-        containerView.layoutIfNeeded()
-        toView.layoutIfNeeded()
-        
-     /*   let top:NSLayoutConstraint = toView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: originFrame.minY)
+        let top:NSLayoutConstraint = toView.topAnchor.constraint(equalTo: containerView.topAnchor, constant:originFrame.minY)
         let left:NSLayoutConstraint = toView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: originFrame.minX)
         let bottom:NSLayoutConstraint = toView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: originFrame.maxY - containerView.frame.height)
-        
-        let right = toView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: originFrame.maxY - originFrame.maxX - containerView.frame.width)*/
-        
-        
-        
-      /*  toView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.addSubview(toView)
-        let top:NSLayoutConstraint = toView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 150)
-        let left:NSLayoutConstraint = toView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 30)
-        let bottom:NSLayoutConstraint = toView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 50)
-        let right = toView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: 40)
+        let right = toView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: originFrame.maxX - containerView.frame.width)
         top.isActive = true
         left.isActive = true
         bottom.isActive = true
         right.isActive = true
+        containerView.layoutIfNeeded()
+        toView.layoutIfNeeded()
         let animator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.8)
         animator.addAnimations {
-            top.constant = 50;
-            left.constant = 50;
+            top.constant = 0;
+            left.constant = 0;
             bottom.constant = 0;
             right.constant = 0;
-            toView.layoutIfNeeded()
             containerView.layoutIfNeeded()
+            toView.layoutIfNeeded()
+            
         }
         animator.addCompletion { position in
             switch position {
@@ -76,8 +51,8 @@ class ModelTransitionAnimator:NSObject,UIViewControllerAnimatedTransitioning{
                 transitionContext.completeTransition(true)
             }
         }
-        animator.startAnimation()*/
-        
+        animator.startAnimation()
+        //transitionContext.completeTransition(true)
     }
     
     
