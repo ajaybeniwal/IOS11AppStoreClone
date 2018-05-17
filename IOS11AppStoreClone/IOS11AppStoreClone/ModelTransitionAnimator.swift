@@ -31,7 +31,7 @@ class ModelTransitionAnimator:NSObject,UIViewControllerAnimatedTransitioning{
         
         containerView.addSubview(toView)
         toView.frame = toViewStartFrame
-       UIView.animate(withDuration: 1.0, delay:0.0,
+       UIView.animate(withDuration: 0.9, delay:0.0,
                        usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0,
                        animations: {
                         toView.frame = toViewEndFrame
