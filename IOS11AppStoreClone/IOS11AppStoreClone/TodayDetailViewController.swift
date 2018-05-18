@@ -17,10 +17,8 @@ class TodayDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         return _tableView
     }()
     override func viewDidLoad() {
-        self.view.superview?.backgroundColor = UIColor.red
         super.viewDidLoad()
         self.navigationItem.largeTitleDisplayMode = .never
-        self.view.backgroundColor = UIColor.white
         self.title = "Detail"
         tableView.delegate = self
         tableView.dataSource = self

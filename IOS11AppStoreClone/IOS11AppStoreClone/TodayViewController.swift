@@ -67,6 +67,8 @@ class TodayViewController: UIViewController,UICollectionViewDataSource,UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let today = TodayDetailViewController()
         today.transitioningDelegate = self
+        today.modalPresentationStyle = .fullScreen
+       // today.modalPresentationStyle = .overFullScreen
 //        today.modalPresentationStyle = .custom;
         guard let cell = collectionView.cellForItem(at: indexPath) else {
             return;
