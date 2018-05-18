@@ -30,9 +30,12 @@ class TodayDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     
     func configureTableView(){
         self.view.addSubview(tableView)
-        tableView.snp.makeConstraints { (make) in
-            make.top.bottom.leading.trailing.equalTo(self.view)
-        }
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
+        tableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
+       tableView.contentInsetAdjustmentBehavior = .never
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
