@@ -23,9 +23,9 @@ class ModelTransitionAnimator:NSObject,UIViewControllerAnimatedTransitioning{
         guard let fromView = transitionContext.view(forKey: UITransitionContextViewKey.from) else { return }
         guard let toView = transitionContext.view(forKey: UITransitionContextViewKey.to) else { return }
         let modalView: UIView = presenting ? toView : fromView
-        
+        containerView.addSubview(toView)
+        containerView.bringSubview(toFront: modalView)
         if(!presenting){
-            
             edgeLayoutConstraints?.constants(to: 0)
             let animator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.8)
             animator.addAnimations {
@@ -33,7 +33,6 @@ class ModelTransitionAnimator:NSObject,UIViewControllerAnimatedTransitioning{
                                              container: containerView)
                 containerView.layoutIfNeeded()
                 modalView.layoutIfNeeded()
-                
             }
             animator.addCompletion { position in
                 switch position {
@@ -45,14 +44,9 @@ class ModelTransitionAnimator:NSObject,UIViewControllerAnimatedTransitioning{
                 }
             }
             animator.startAnimation()
-            
-            
         }
         else{
-            
             modalView.translatesAutoresizingMaskIntoConstraints = false
-            containerView.addSubview(toView)
-            
             edgeLayoutConstraints = NSEdgeLayoutConstraints(view: modalView,
                                                             container: containerView,
                                                             frame: originFrame)
@@ -64,7 +58,6 @@ class ModelTransitionAnimator:NSObject,UIViewControllerAnimatedTransitioning{
                 self.edgeLayoutConstraints?.constants(to: 0)
                 containerView.layoutIfNeeded()
                 modalView.layoutIfNeeded()
-                
             }
             animator.addCompletion { position in
                 switch position {
@@ -76,8 +69,6 @@ class ModelTransitionAnimator:NSObject,UIViewControllerAnimatedTransitioning{
             }
             animator.startAnimation()
         }
-        
-        //transitionContext.completeTransition(true)
     }
     
     

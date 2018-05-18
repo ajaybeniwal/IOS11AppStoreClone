@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
+        //self.window?.rootViewController = TabViewController()
+        
         self.window?.rootViewController = TabViewController()
       //  UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         return true
