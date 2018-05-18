@@ -31,6 +31,7 @@ class ModelTransitionAnimator:NSObject,UIViewControllerAnimatedTransitioning{
             animator.addAnimations {
                 self.edgeLayoutConstraints?.match(to: self.originFrame,
                                              container: containerView)
+                
                 containerView.layoutIfNeeded()
                 modalView.layoutIfNeeded()
             }
