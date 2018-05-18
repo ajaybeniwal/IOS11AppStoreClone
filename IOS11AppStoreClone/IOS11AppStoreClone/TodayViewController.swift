@@ -68,8 +68,6 @@ class TodayViewController: UIViewController,UICollectionViewDataSource,UICollect
         let today = TodayDetailViewController()
         today.transitioningDelegate = self
         today.modalPresentationStyle = .fullScreen
-       // today.modalPresentationStyle = .overFullScreen
-//        today.modalPresentationStyle = .custom;
         guard let cell = collectionView.cellForItem(at: indexPath) else {
             return;
         }
