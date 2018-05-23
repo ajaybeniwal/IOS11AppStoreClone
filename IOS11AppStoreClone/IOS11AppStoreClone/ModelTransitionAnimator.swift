@@ -24,11 +24,19 @@ class ModelTransitionAnimator:NSObject,UIViewControllerAnimatedTransitioning{
         guard let toView = transitionContext.view(forKey: UITransitionContextViewKey.to) else { return }
         let modalView: UIView = presenting ? toView : fromView
         containerView.addSubview(toView)
+        containerView.layer.cornerRadius=0
+        let underLineTableView:UITableView = modalView.subviews[0] as! UITableView
+        underLineTableView.layer.cornerRadius = 0;
+        
         containerView.bringSubview(toFront: modalView)
         if(!presenting){
             edgeLayoutConstraints?.constants(to: 0)
             let animator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.8)
             animator.addAnimations {
+                underLineTableView.layer.cornerRadius = 10;
+                underLineTableView.layer.masksToBounds = true
+               // modalView.layer.cornerRadius = 10
+               // modalView.layer.masksToBounds = true
                 self.edgeLayoutConstraints?.match(to: self.originFrame,
                                              container: containerView)
                 

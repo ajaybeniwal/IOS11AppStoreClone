@@ -39,9 +39,9 @@ public final class NSEdgeLayoutConstraints {
     }
     
     public func match(to frame: CGRect, container: UIView) {
-        top.constant = frame.minY
+        top.constant = frame.minY+20
         left.constant = frame.minX
-        bottom.constant = frame.maxY - container.frame.height
+        bottom.constant = frame.maxY - container.frame.height-20
         right.constant = frame.maxX - container.frame.width
     }
     

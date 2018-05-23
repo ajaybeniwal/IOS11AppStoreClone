@@ -27,12 +27,12 @@ class TodayViewController: UIViewController,UICollectionViewDataSource,UICollect
         collectionView.register(ImageViewCardCell.self, forCellWithReuseIdentifier: "imageViewCard")
       //  collectionView.backgroundColor = UIColor(red: 223/255, green: 226/255, blue: 229/255, alpha: 1)
         collectionView.backgroundColor = UIColor.white
-        let layoutGuide = self.view.safeAreaLayoutGuide
+       // let layoutGuide = self.view.safeAreaLayoutGuide
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 0).isActive = true
-        collectionView.topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: 0).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: 0).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: 0).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
+        collectionView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
         collectionView.dataSource = self
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout;
         flowLayout.minimumLineSpacing = 0
@@ -211,8 +211,8 @@ class ImageViewCardCell:UICollectionViewCell{//UIGestureRecognizerDelegate{
     }*/
     
     func configure(index:Int){
-        if(index>0){
+        /*if(index>0){
             imageView.image = UIImage(named: "CardImage4")
-        }
+        }*/
     }
 }
